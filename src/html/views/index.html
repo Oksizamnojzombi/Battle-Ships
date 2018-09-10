@@ -6,13 +6,8 @@ author: "Oksana Che"
 <!-- HEADER -->
 <%= _.template(require('./../includes/header.html'))(data) %>
 
-<div id="mainPage" class="container-fluid main-container">
-    <div class="row">
-        <!-- Main SECTION -->
-        <%= _.template(require('./../includes/main.html'))(data) %>
-    </div>
-</div>
-
+<!-- Main SECTION -->
+<%= _.template(require('./../includes/main.html'))(data) %>
 
 <!-- FOOTER -->
 <%= _.template(require('./../includes/footer.html'))(data) %>

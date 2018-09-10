@@ -1,9 +1,21 @@
     <!-- FOOTER -->
-    <footer>
-        <p>Footer</p>
-    </footer>
+    <!--<footer>-->
+        <!--<p>Footer</p>-->
+    <!--</footer>-->
 
+    <script type="application/javascript" src="https://pixijs.download/v4.5.5/pixi.min.js"></script>
+    <script type="application/javascript" src="js/pixi-spine.js"></script>
     <script type="application/javascript" src="js/bundle.js"></script>
+
+
+    <script type="text/javascript">
+        let type = "WebGL";
+        if(!PIXI.utils.isWebGLSupported()){
+            type = "canvas"
+        }
+
+        PIXI.utils.sayHello(type)
+    </script>
 
 </body>
 </html>

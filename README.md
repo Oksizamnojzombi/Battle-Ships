@@ -1,5 +1,4 @@
-# Under-Gram
-New page for Under Gram Glasses
+# Battle ships with Pixi.js
 
 The site is compiled on  Webpack 4.
 It is assumed that Node.js is installed.
@@ -192,3 +191,36 @@ const path = require('path');
 Link to the resource for the procurement of the site. If necessary, recompile the project. - https://github.com/Harrix/static-site-webpack-habrahabr/blob/master/docs/article.md
 
 #Here added Pixi.js
+
+Installing Pixi
+The version used for this introduction is v4.5.5 and you can find the pixi.min.js file either in this repository's pixi folder or on Pixi's release page for v4.5.5.
+Or, you can get the latest version from Pixi's main release page.
+
+Next, create a basic HTML page, and use a <script> tag to link the pixi.min.js file that you've just downloaded. The <script> tag's src should be relative to your root directory where your webserver is running. Your <script> tag might look something like this:
+
+<script src="pixi.min.js"></script>
+
+Here's a basic HTML page that you could use to link Pixi and test that it's working. (This assumes that the pixi.min.js is in a subfolder called pixi):
+
+			<!doctype html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <title>Hello World</title>
+            </head>
+              <script src="pixi/pixi.min.js"></script>
+            <body>
+              <script type="text/javascript">
+                let type = "WebGL"
+                if(!PIXI.utils.isWebGLSupported()){
+                  type = "canvas"
+                }
+            
+                PIXI.utils.sayHello(type)
+              </script>
+            </body>
+            </html>
+
+If Pixi is linking correctly, something like this will be displayed in your web browser's JavaScript console by default:
+
+      PixiJS 4.4.5 - * canvas * http://www.pixijs.com/  ♥♥♥ 
