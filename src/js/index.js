@@ -30,11 +30,11 @@ let model = {
             app.stage.addChild(bgSprite);
             app.stage.addChild(bgSprite2);
 
-            let position = 0;
+            let positionBg = 0;
             app.ticker.add(function(){
-                position += 10;
+                positionBg += 10;
 
-                bgSprite.x = -(position * 0.05);
+                bgSprite.x = -(positionBg * 0.05);
                 bgSprite.x %= 1100 * 2;
                 if(bgSprite.x < 0)
                 {
@@ -42,7 +42,7 @@ let model = {
                 }
                 bgSprite.x -= 1100;
 
-                bgSprite2.x = -(position * 0.05) + 1100;
+                bgSprite2.x = -(positionBg * 0.05) + 1100;
                 bgSprite2.x %= 1100 * 2;
                 if(bgSprite2.x < 0)
                 if(bgSprite2.x < 0)
@@ -50,8 +50,28 @@ let model = {
                     bgSprite2.x += 1100 * 2;
                 }
                 bgSprite2.x -= 1100;
-            })
-        }
+            });
+
+
+            // fields
+            let fieldContainer = new PIXI.Container();
+            app.stage.addChild(fieldContainer);
+
+            let texture = PIXI.Texture.fromImage('../img/item.png');
+
+            //create a 10x10 field
+            for (let i = 0; i < 100; i++) {
+                let field = new PIXI.Sprite(texture);
+                // field.anchor.set(0);
+                field.x = (i % 10) * 22;
+                field.y = Math.floor(i / 10) * 22;
+                fieldContainer.addChild(field);
+            }
+
+            // Center on the screen
+            fieldContainer.x = (app.screen.width - fieldContainer.width) / 2;
+            fieldContainer.y = (app.screen.height - fieldContainer.height) / 2;
+        } // end setup
     }
 };
 
